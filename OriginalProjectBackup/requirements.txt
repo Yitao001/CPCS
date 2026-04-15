@@ -1,0 +1,23 @@
+# 核心依赖
+fastapi
+uvicorn
+pydantic
+python-dotenv
+PyYAML
+
+# 数据库依赖
+mysql-connector-python
+
+# LangChain依赖
+langchain
+langchain-core
+langchain-community
+langchain-openai
+
+# 安全依赖
+slowapi
+limits
+
+# 工具库
+requests
+beautifulsoup4

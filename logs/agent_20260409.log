@@ -1,0 +1,7 @@
+2026-04-09 08:45:23,413 - agent - INFO - factory.py:27 - [模型工厂] 正在加载对话模型: siliconflow/deepseek-ai/DeepSeek-V3
+2026-04-09 08:47:51,474 - agent - INFO - factory.py:27 - [模型工厂] 正在加载对话模型: siliconflow/deepseek-ai/DeepSeek-V3
+2026-04-09 08:47:54,271 - agent - INFO - factory.py:73 - [模型工厂] 正在加载嵌入模型: siliconflow/BAAI/bge-m3
+2026-04-09 08:48:08,338 - agent - INFO - factory.py:27 - [模型工厂] 正在加载对话模型: siliconflow/deepseek-ai/DeepSeek-V3
+2026-04-09 08:48:10,857 - agent - INFO - factory.py:73 - [模型工厂] 正在加载嵌入模型: siliconflow/BAAI/bge-m3
+2026-04-09 08:48:11,592 - agent - INFO - agent_tools.py:47 - [代理调用] 请求对话历史，学生ID: S2023003
+2026-04-09 08:48:12,144 - agent - ERROR - agent_tools.py:126 - [get_chat_history_from_db]代理服务调用失败: 404 Client Error: Not Found for url: https://373eabfa.r22.cpolar.top/chat-history

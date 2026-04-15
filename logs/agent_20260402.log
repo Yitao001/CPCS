@@ -1,0 +1,71 @@
+2026-04-02 09:52:55,767 - agent - ERROR - agent_tools.py:212 - [get_db_connection]MySQL连接失败：2005 (HY000): Unknown MySQL server host 'shared-saas-985ceys1n-36041.rds.gz.aliyuncs.com' (11001)
+2026-04-02 09:53:18,728 - agent - INFO - agent_tools.py:169 - [向量库] 参与者 1001 的人物画像已成功存入向量库
+2026-04-02 09:56:22,425 - agent - ERROR - agent_tools.py:212 - [get_db_connection]MySQL连接失败：2005 (HY000): Unknown MySQL server host 'shared-saas-985ceys1n-36041.rds.gz.aliyuncs.com' (11001)
+2026-04-02 09:56:38,677 - agent - INFO - agent_tools.py:169 - [向量库] 参与者 S2023003 的人物画像已成功存入向量库
+2026-04-02 10:29:49,411 - agent - ERROR - agent_tools.py:212 - [get_db_connection]MySQL连接失败：2005 (HY000): Unknown MySQL server host 'shared-saas-985ceys1n-36041.rds.gz.aliyuncs.com' (11001)
+2026-04-02 10:30:06,239 - agent - INFO - agent_tools.py:169 - [向量库] 参与者 1001 的人物画像已成功存入向量库
+2026-04-02 10:34:00,090 - agent - ERROR - agent_tools.py:212 - [get_db_connection]MySQL连接失败：2005 (HY000): Unknown MySQL server host 'shared-saas-985ceys1n-36041.rds.gz.aliyuncs.com' (11001)
+2026-04-02 10:34:17,296 - agent - INFO - agent_tools.py:169 - [向量库] 参与者 S2023003 的人物画像已成功存入向量库
+2026-04-02 10:47:58,561 - agent - ERROR - agent_tools.py:212 - [get_db_connection]MySQL连接失败：2005 (HY000): Unknown MySQL server host 'shared-saas-985ceys1n-36041.rds.gz.aliyuncs.com' (11001)
+2026-04-02 10:48:16,205 - agent - INFO - agent_tools.py:169 - [向量库] 参与者 S2023003 的人物画像已成功存入向量库
+2026-04-02 10:50:05,933 - agent - ERROR - agent_tools.py:212 - [get_db_connection]MySQL连接失败：2005 (HY000): Unknown MySQL server host 'shared-saas-985ceys1n-36041.rds.gz.aliyuncs.com' (11001)
+2026-04-02 10:50:22,405 - agent - INFO - agent_tools.py:169 - [向量库] 参与者 S2023003 的人物画像已成功存入向量库
+2026-04-02 11:28:46,611 - agent - ERROR - agent_tools.py:212 - [get_db_connection]MySQL连接失败：2005 (HY000): Unknown MySQL server host 'shared-saas-985ceys1n-36041.rds.gz.aliyuncs.com' (11001)
+2026-04-02 11:29:02,441 - agent - INFO - agent_tools.py:169 - [向量库] 参与者 S2023003 的人物画像已成功存入向量库
+2026-04-02 11:29:58,279 - agent - INFO - agent_tools.py:169 - [向量库] 参与者 S2023003 的人物画像已成功存入向量库
+2026-04-02 11:39:09,027 - agent - INFO - agent_tools.py:169 - [向量库] 参与者 S2023003 的人物画像已成功存入向量库
+2026-04-02 11:41:11,906 - agent - INFO - agent_tools.py:169 - [向量库] 参与者 S2023009 的人物画像已成功存入向量库
+2026-04-02 11:42:05,526 - agent - INFO - agent_tools.py:169 - [向量库] 参与者 S2023009 的人物画像已成功存入向量库
+2026-04-02 11:42:22,608 - agent - INFO - agent_tools.py:169 - [向量库] 参与者 S2023003 的人物画像已成功存入向量库
+2026-04-02 11:42:46,314 - agent - INFO - agent_tools.py:169 - [向量库] 参与者 S2023003 的人物画像已成功存入向量库
+2026-04-02 12:29:33,470 - agent - INFO - api.py:114 - [API] 收到人物画像分析请求，参与者ID: S2023003
+2026-04-02 12:29:55,738 - agent - INFO - agent_tools.py:169 - [向量库] 参与者 S2023003 的人物画像已成功存入向量库
+2026-04-02 12:29:55,739 - agent - INFO - api.py:119 - [API] 人物画像分析完成，参与者ID: S2023003
+2026-04-02 12:31:04,760 - agent - INFO - api.py:122 - [API] 收到人物画像分析请求，参与者ID: S2023003
+2026-04-02 12:31:25,242 - agent - INFO - agent_tools.py:169 - [向量库] 参与者 S2023003 的人物画像已成功存入向量库
+2026-04-02 12:31:25,243 - agent - INFO - api.py:127 - [API] 人物画像分析完成，参与者ID: S2023003
+2026-04-02 12:31:29,344 - agent - WARNING - api.py:58 - [API] 缺少API Key
+2026-04-02 12:34:48,766 - agent - WARNING - api.py:58 - [API] 缺少API Key
+2026-04-02 12:34:51,700 - agent - WARNING - api.py:58 - [API] 缺少API Key
+2026-04-02 12:34:54,983 - agent - WARNING - api.py:58 - [API] 缺少API Key
+2026-04-02 12:38:22,336 - agent - WARNING - api.py:92 - [API] 缺少API Key
+2026-04-02 12:38:23,251 - agent - WARNING - api.py:92 - [API] 缺少API Key
+2026-04-02 12:53:27,216 - agent - WARNING - api.py:92 - [API] 缺少API Key
+2026-04-02 12:53:30,008 - agent - WARNING - api.py:92 - [API] 缺少API Key
+2026-04-02 12:53:31,426 - agent - WARNING - api.py:92 - [API] 缺少API Key
+2026-04-02 12:53:41,906 - agent - WARNING - api.py:99 - [API] 无效的API Key尝试: dev_secure...
+2026-04-02 12:54:46,925 - agent - INFO - api.py:156 - [API] 收到人物画像分析请求，参与者ID: S2023003
+2026-04-02 12:54:47,078 - agent - ERROR - agent_tools.py:212 - [get_db_connection]MySQL连接失败：1045 (28000): Access denied for user 'root'@'localhost' (using password=***
+2026-04-02 12:55:04,873 - agent - INFO - agent_tools.py:169 - [向量库] 参与者 S2023003 的人物画像已成功存入向量库
+2026-04-02 12:55:04,875 - agent - INFO - api.py:161 - [API] 人物画像分析完成，参与者ID: S2023003
+2026-04-02 12:57:51,280 - agent - INFO - api.py:156 - [API] 收到人物画像分析请求，参与者ID: S2023003
+2026-04-02 12:58:10,728 - agent - INFO - agent_tools.py:169 - [向量库] 参与者 S2023003 的人物画像已成功存入向量库
+2026-04-02 12:58:10,728 - agent - INFO - api.py:161 - [API] 人物画像分析完成，参与者ID: S2023003
+2026-04-02 14:42:04,534 - agent - INFO - db_pool.py:51 - [数据库连接池] 初始化成功，pool_size=5
+2026-04-02 14:42:04,541 - agent - DEBUG - db_pool.py:69 - [数据库连接池] 获取连接成功
+2026-04-02 14:42:04,543 - agent - INFO - cache_manager.py:25 - [缓存管理器] 初始化完成，max_size=100, ttl=3600s
+2026-04-02 14:42:04,544 - agent - DEBUG - cache_manager.py:70 - [缓存管理器] 缓存已设置: test:123
+2026-04-02 14:42:04,544 - agent - DEBUG - cache_manager.py:48 - [缓存管理器] 缓存命中: test:123
+2026-04-02 16:02:04,072 - agent - INFO - cache_manager.py:25 - [缓存管理器] 初始化完成，max_size=100, ttl=3600s
+2026-04-02 16:06:26,175 - agent - INFO - api.py:265 - [API] 收到人物画像分析请求，参与者ID: S2023003
+2026-04-02 16:06:26,177 - agent - INFO - cache_manager.py:25 - [缓存管理器] 初始化完成，max_size=100, ttl=3600s
+2026-04-02 16:06:26,758 - agent - INFO - db_pool.py:51 - [数据库连接池] 初始化成功，pool_size=5
+2026-04-02 16:06:26,761 - agent - DEBUG - db_pool.py:69 - [数据库连接池] 获取连接成功
+2026-04-02 16:06:51,347 - agent - INFO - agent_tools.py:159 - [向量库] 参与者 S2023003 的人物画像已成功存入向量库
+2026-04-02 16:06:51,348 - agent - DEBUG - cache_manager.py:70 - [缓存管理器] 缓存已设置: persona:S2023003
+2026-04-02 16:06:51,348 - agent - INFO - agent_tools.py:194 - [缓存] 人物画像已缓存: S2023003
+2026-04-02 16:06:51,349 - agent - INFO - api.py:270 - [API] 人物画像分析完成，参与者ID: S2023003
+2026-04-02 16:26:48,928 - agent - INFO - api.py:265 - [API] 收到人物画像分析请求，参与者ID: S2023003
+2026-04-02 16:26:48,929 - agent - INFO - cache_manager.py:25 - [缓存管理器] 初始化完成，max_size=100, ttl=3600s
+2026-04-02 16:26:49,271 - agent - INFO - db_pool.py:51 - [数据库连接池] 初始化成功，pool_size=5
+2026-04-02 16:26:49,272 - agent - DEBUG - db_pool.py:69 - [数据库连接池] 获取连接成功
+2026-04-02 16:27:11,595 - agent - INFO - agent_tools.py:159 - [向量库] 参与者 S2023003 的人物画像已成功存入向量库
+2026-04-02 16:27:11,596 - agent - DEBUG - cache_manager.py:70 - [缓存管理器] 缓存已设置: persona:S2023003
+2026-04-02 16:27:11,597 - agent - INFO - agent_tools.py:194 - [缓存] 人物画像已缓存: S2023003
+2026-04-02 16:27:11,597 - agent - INFO - api.py:270 - [API] 人物画像分析完成，参与者ID: S2023003
+2026-04-02 16:27:53,390 - agent - INFO - api.py:265 - [API] 收到人物画像分析请求，参与者ID: S2023012
+2026-04-02 16:27:53,392 - agent - DEBUG - db_pool.py:69 - [数据库连接池] 获取连接成功
+2026-04-02 16:28:16,516 - agent - INFO - agent_tools.py:159 - [向量库] 参与者 S2023012 的人物画像已成功存入向量库
+2026-04-02 16:28:16,518 - agent - DEBUG - cache_manager.py:70 - [缓存管理器] 缓存已设置: persona:S2023012
+2026-04-02 16:28:16,518 - agent - INFO - agent_tools.py:194 - [缓存] 人物画像已缓存: S2023012
+2026-04-02 16:28:16,519 - agent - INFO - api.py:270 - [API] 人物画像分析完成，参与者ID: S2023012

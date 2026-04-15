@@ -1,0 +1,16 @@
+mysql:
+  host: ""
+  user: ""
+  password: ""
+  database: ""
+
+table_structure:
+  table_name: "talkrecord"
+  fields:
+    student_id: "studentId"
+    content: "content"
+    created_time: "createTime"
+  query_limit: 100
+
+# 注意：生产环境请使用 .env 文件配置敏感信息（MYSQL_PASSWORD、API_KEY等）
+# 参考 .env.example 文件创建您的 .env 文件

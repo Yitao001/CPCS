@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  persona-agent:
+    build: .
+    container_name: persona-agent
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      # 数据库配置
+      MYSQL_HOST: ${MYSQL_HOST:-localhost}
+      MYSQL_USER: ${MYSQL_USER:-root}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-student_talk_db}
+      
+      # API安全配置
+      API_KEY: ${API_KEY:-}
+      CORS_ORIGINS: ${CORS_ORIGINS:-*}
+      RATE_LIMIT_PER_MINUTE: ${RATE_LIMIT_PER_MINUTE:-60}
+      
+      # 通义千问API Key
+      DASHSCOPE_API_KEY: ${DASHSCOPE_API_KEY:-}
+    volumes:
+      - ./logs:/app/logs
+      - ./chroma_db:/app/chroma_db
+    networks:
+      - persona-network
+
+networks:
+  persona-network:
+    driver: bridge

@@ -1,0 +1,3 @@
+websockets
+mysql-connector-python
+python-dotenv

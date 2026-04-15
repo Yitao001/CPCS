@@ -1,0 +1,2 @@
+2026-04-08 14:17:05,733 - agent - INFO - factory.py:27 - [模型工厂] 正在加载对话模型: tongyi/qwen-max
+2026-04-08 14:17:07,836 - agent - INFO - factory.py:63 - [模型工厂] 正在加载嵌入模型: tongyi/text-embedding-v4
