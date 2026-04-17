@@ -6,7 +6,15 @@ import json
 from typing import List, Dict, Optional
 from utils.path_tool import get_abs_path
 from utils.logger_handler import logger
-from data.vector_db_manager import vector_db_manager
+
+try:
+    from data.vector_db_manager import vector_db_manager
+    USE_CHROMA = True
+except Exception:
+    USE_CHROMA = False
+    logger.warning("[Excel导入] ChromaDB不可用，使用简单向量库")
+
+from data.simple_vector_db import simple_vector_db_manager
 
 
 class ExcelImporter:
@@ -180,9 +188,16 @@ class ExcelImporter:
             是否成功
         """
         try:
+            if USE_CHROMA and vector_db_manager.collection:
+                db_manager = vector_db_manager
+                logger.info("[Excel导入] 使用 ChromaDB")
+            else:
+                db_manager = simple_vector_db_manager
+                logger.info("[Excel导入] 使用简单向量库")
+            
             if clear:
                 logger.info("[Excel导入] 清空向量库")
-                vector_db_manager.clear()
+                db_manager.clear()
             
             jobs = self.read_excel(file_path)
             if not jobs:
@@ -191,7 +206,7 @@ class ExcelImporter:
             
             documents = [self.job_to_document(job) for job in jobs]
             
-            success = vector_db_manager.add_documents(documents)
+            success = db_manager.add_documents(documents)
             
             if success:
                 logger.info(f"[Excel导入] 成功导入 {len(documents)} 个岗位到向量库")
@@ -253,4 +268,7 @@ def search_jobs(query: str, top_k: int = 5) -> List[Dict]:
     Returns:
         相关岗位列表
     """
-    return vector_db_manager.search(query, top_k)
+    if USE_CHROMA and vector_db_manager.collection:
+        return vector_db_manager.search(query, top_k)
+    else:
+        return simple_vector_db_manager.search(query, top_k)
