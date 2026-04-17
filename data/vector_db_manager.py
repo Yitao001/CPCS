@@ -2,6 +2,7 @@
 向量数据库管理模块 - RAG 支持
 """
 import os
+os.environ["CHROMA_PYTHON_ONLY"] = "1"
 from typing import List, Dict, Optional
 from utils.path_tool import get_abs_path
 from utils.logger_handler import logger
