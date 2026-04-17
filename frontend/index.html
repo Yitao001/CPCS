@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大学生职业规划智能体 - 演示</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🎓 大学生职业规划智能体</h1>
+            <p class="subtitle">基于 AI 的个性化职业规划助手</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="student">👤 就业能力分析</button>
+            <button class="tab-btn" data-tab="jobs">💼 就业岗位要求</button>
+            <button class="tab-btn" data-tab="report">📋 职业生涯发展报告</button>
+            <button class="tab-btn" data-tab="chat">💬 智能对话</button>
+        </div>
+
+        <div class="content">
+            <div id="student" class="tab-content active">
+                <div class="card">
+                    <h2>就业能力分析</h2>
+                    <p style="color: #666; margin-bottom: 20px;">通过简历解析，构建学生就业能力画像，进行完整度和竞争力评分。</p>
+                    
+                    <div class="form-group">
+                        <label>学生ID</label>
+                        <input type="text" id="studentId" placeholder="请输入学生ID，如：2023001" value="2023001">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>简历内容</label>
+                        <textarea id="resumeContent" rows="10" placeholder="请粘贴简历内容，或描述个人情况">个人简介：
+张三，计算机科学与技术专业，本科在读，大三学生。
+
+专业技能：
+- 编程语言：Python、Java、C++
+- 框架：Spring Boot、Django
+- 数据库：MySQL、MongoDB
+- 工具：Git、Docker
+
+证书：
+- 计算机二级
+- 英语六级
+
+实习经历：
+- 2025.07-2025.09，某科技公司，Java后端开发实习生
+- 参与项目：企业管理系统开发
+
+项目经历：
+- 校园二手交易平台（团队项目，后端开发）
+- 个人博客系统（独立开发）</textarea>
+                    </div>
+                    
+                    <button class="btn btn-primary" onclick="parseResume()">解析简历</button>
+                </div>
+                
+                <div id="studentProfile" class="card" style="display: none;">
+                    <h2>学生就业能力画像</h2>
+                    <div id="studentProfileContent"></div>
+                </div>
+            </div>
+
+            <div id="jobs" class="tab-content">
+                <div class="card">
+                    <h2>就业岗位要求</h2>
+                    <p style="color: #666; margin-bottom: 20px;">探索各类就业岗位的详细要求，了解岗位间的关联和发展路径。</p>
+                    
+                    <div class="form-group">
+                        <label>搜索岗位</label>
+                        <input type="text" id="jobSearch" placeholder="输入关键词搜索岗位，如：Java、前端、数据分析">
+                        <button class="btn btn-primary" style="margin-top: 10px;" onclick="searchJobs()">搜索</button>
+                    </div>
+                    
+                    <button class="btn btn-secondary" onclick="loadJobs()">查看所有岗位</button>
+                    
+                    <div id="jobList" class="job-list" style="margin-top: 20px;"></div>
+                </div>
+
+                <div id="jobDetail" class="card" style="display: none;">
+                    <h2>岗位详情</h2>
+                    <div id="jobDetailContent"></div>
+                </div>
+            </div>
+
+            <div id="report" class="tab-content">
+                <div class="card">
+                    <h2>职业生涯发展报告</h2>
+                    <p style="color: #666; margin-bottom: 20px;">生成完整的职业发展报告，包含人岗匹配、职业路径规划、行动计划等。</p>
+                    
+                    <div class="form-group">
+                        <label>学生ID</label>
+                        <input type="text" id="reportStudentId" placeholder="请输入学生ID，如：2023001" value="2023001">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>学生信息</label>
+                        <textarea id="reportStudentInfo" rows="4" placeholder="请描述学生情况">张三，计算机科学与技术专业大三学生，学习成绩优秀，有较强的编程能力和团队协作精神。</textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>目标岗位</label>
+                        <input type="text" id="reportTargetJob" placeholder="输入目标岗位，如：Java后端开发" value="Java">
+                    </div>
+                    
+                    <button class="btn btn-primary" onclick="generateCareerReport()">生成报告</button>
+                </div>
+                
+                <div id="careerReport" class="card" style="display: none;">
+                    <h2>职业生涯发展报告</h2>
+                    <div id="careerReportContent"></div>
+                    <div style="margin-top: 20px;">
+                        <button class="btn btn-secondary" onclick="exportReport('markdown')">导出 Markdown</button>
+                        <button class="btn btn-secondary" onclick="exportReport('html')">导出 HTML</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="chat" class="tab-content">
+                <div class="card chat-container">
+                    <h2>智能对话</h2>
+                    <p style="color: #666; margin-bottom: 15px;">与职业规划智能体进行自然语言对话，获取个性化的职业建议。</p>
+                    <div id="chatMessages" class="chat-messages"></div>
+                    <div class="chat-input">
+                        <input type="text" id="chatInput" placeholder="输入您的问题..." onkeypress="handleChatKeypress(event)">
+                        <button class="btn btn-primary" onclick="sendChat()">发送</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="loading" class="loading" style="display: none;">
+        <div class="spinner"></div>
+        <p>处理中...</p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

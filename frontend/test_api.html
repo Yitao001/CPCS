@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API 测试页面</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #333; margin-bottom: 20px; }
+        h2 { color: #666; margin-top: 30px; }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #7c3aed;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover { background: #6d28d9; }
+        .result {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f0f0f0;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+        .success { background: #d1fae5; color: #065f46; }
+        .error { background: #fee2e2; color: #991b1b; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 API 测试页面</h1>
+        <p>API 地址: <code id="apiUrl">http://localhost:9000</code></p>
+        
+        <h2>1. 测试获取岗位列表</h2>
+        <button onclick="testGetJobs()">获取岗位列表</button>
+        <div id="result1" class="result">点击按钮测试...</div>
+        
+        <h2>2. 测试获取岗位详情</h2>
+        <button onclick="testGetJobDetail()">获取岗位详情 (Java后端开发工程师)</button>
+        <div id="result2" class="result">点击按钮测试...</div>
+        
+        <h2>3. 测试职业测评</h2>
+        <button onclick="testAssessment()">职业测评</button>
+        <div id="result3" class="result">点击按钮测试...</div>
+        
+        <h2>4. 测试智能对话</h2>
+        <button onclick="testChat()">发送聊天消息</button>
+        <div id="result4" class="result">点击按钮测试...</div>
+        
+        <h2>5. 测试职业发展报告</h2>
+        <button onclick="testCareerReport()">生成职业发展报告</button>
+        <div id="result5" class="result">点击按钮测试...</div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:9000';
+
+        async function apiRequest(url, options = {}) {
+            try {
+                console.log(`请求: ${API_BASE}${url}`);
+                const response = await fetch(`${API_BASE}${url}`, {
+                    headers: { 'Content-Type': 'application/json', ...options.headers },
+                    ...options
+                });
+                console.log(`响应状态: ${response.status}`);
+                const data = await response.json();
+                console.log('响应数据:', data);
+                return data;
+            } catch (error) {
+                console.error('请求失败:', error);
+                throw error;
+            }
+        }
+
+        function showResult(divId, content, isSuccess = true) {
+            const div = document.getElementById(divId);
+            div.className = 'result ' + (isSuccess ? 'success' : 'error');
+            div.textContent = typeof content === 'string' ? content : JSON.stringify(content, null, 2);
+        }
+
+        async function testGetJobs() {
+            try {
+                const result = await apiRequest('/jobs');
+                showResult('result1', result, result.status === 'success');
+            } catch (error) {
+                showResult('result1', '错误: ' + error.message, false);
+            }
+        }
+
+        async function testGetJobDetail() {
+            try {
+                const result = await apiRequest('/jobs/Java后端开发工程师');
+                showResult('result2', result, result.status === 'success');
+            } catch (error) {
+                showResult('result2', '错误: ' + error.message, false);
+            }
+        }
+
+        async function testAssessment() {
+            try {
+                const result = await apiRequest('/assessment', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        student_info: '大三，计算机科学与技术专业，喜欢编程，对人工智能感兴趣',
+                        student_name: '张三'
+                    })
+                });
+                showResult('result3', result, result.status === 'success');
+            } catch (error) {
+                showResult('result3', '错误: ' + error.message, false);
+            }
+        }
+
+        async function testChat() {
+            try {
+                const result = await apiRequest('/chat', {
+                    method: 'POST',
+                    body: JSON.stringify({ message: '你好，我是计算机专业大三学生，请给我一些职业规划建议' })
+                });
+                showResult('result4', result, result.status === 'success');
+            } catch (error) {
+                showResult('result4', '错误: ' + error.message, false);
+            }
+        }
+
+        async function testCareerReport() {
+            try {
+                const result = await apiRequest('/career-report', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        student_id: '2023001',
+                        student_info: '大三，计算机科学与技术专业，熟练掌握Java、Python、MySQL，有3个月的后端开发实习经验，对大数据方向感兴趣',
+                        job_name: 'Java后端开发工程师'
+                    })
+                });
+                showResult('result5', result, result.status === 'success');
+            } catch (error) {
+                showResult('result5', '错误: ' + error.message, false);
+            }
+        }
+    </script>
+</body>
+</html>

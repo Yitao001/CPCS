@@ -1,0 +1,4 @@
+main_prompt_path: prompts/main_prompt.txt
+career_assessment_prompt_path: prompts/career_assessment_prompt.txt
+course_recommendation_prompt_path: prompts/course_recommendation_prompt.txt
+job_guidance_prompt_path: prompts/job_guidance_prompt.txt
