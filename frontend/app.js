@@ -1,7 +1,8 @@
-const API_BASE = 'http://localhost:9002';
+const API_BASE = window.location.origin;
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('页面加载完成，初始化...');
+    console.log('API 地址:', API_BASE);
     initTabs();
     loadJobs();
 });
