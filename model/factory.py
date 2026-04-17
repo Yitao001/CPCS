@@ -22,8 +22,11 @@ class ChatModelFactory(BaseModelFactory):
         
         logger.info(f"[模型工厂] 正在加载对话模型: {model_provider}/{model_name}")
         
-        if model_provider == "tongyi":
+        if model_provider == "tongyi" or model_provider == "dashscope":
             from langchain_community.chat_models.tongyi import ChatTongyi
+            api_key = os.getenv("DASHSCOPE_API_KEY", "")
+            if api_key:
+                os.environ["DASHSCOPE_API_KEY"] = api_key
             return ChatTongyi(model=model_name)
         
         elif model_provider == "openai":
