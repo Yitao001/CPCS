@@ -1,8 +1,10 @@
 const API_BASE = window.location.origin;
+const API_KEY = 'CPCS_test_API_key';
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('页面加载完成，初始化...');
     console.log('API 地址:', API_BASE);
+    console.log('API Key:', API_KEY);
     initTabs();
     loadJobs();
 });
@@ -40,6 +42,7 @@ async function apiRequest(url, options = {}) {
         const response = await fetch(`${API_BASE}${url}`, {
             headers: {
                 'Content-Type': 'application/json',
+                'X-API-Key': API_KEY,
                 ...options.headers
             },
             ...options
