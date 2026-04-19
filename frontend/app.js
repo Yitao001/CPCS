@@ -401,7 +401,17 @@ function addChatMessage(role, content) {
     
     const messageDiv = document.createElement('div');
     messageDiv.className = `chat-message ${role}`;
-    messageDiv.textContent = content;
+    
+    if (role === 'assistant') {
+        try {
+            messageDiv.innerHTML = marked.parse(content);
+        } catch (e) {
+            messageDiv.textContent = content;
+        }
+    } else {
+        messageDiv.textContent = content;
+    }
+    
     container.appendChild(messageDiv);
     container.scrollTop = container.scrollHeight;
 }

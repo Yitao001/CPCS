@@ -157,6 +157,24 @@ class ReportManager:
 """
         except ImportError:
             return "<html><body><pre>" + md_content + "</pre></body></html>"
+    
+    def load_all_reports(self) -> Dict[str, Dict]:
+        """加载所有报告"""
+        try:
+            all_reports = {}
+            for filename in os.listdir(self.data_dir):
+                if filename.endswith(".json"):
+                    file_path = os.path.join(self.data_dir, filename)
+                    with open(file_path, "r", encoding="utf-8") as f:
+                        report_data = json.load(f)
+                        # 使用文件名（不含扩展名）作为report_id
+                        report_id = filename[:-5]
+                        all_reports[report_id] = report_data
+            logger.info(f"[报告管理] 已加载 {len(all_reports)} 个报告")
+            return all_reports
+        except Exception as e:
+            logger.error(f"[报告管理] 加载所有报告失败: {e}")
+            return {}
 
 
 student_profile_manager = StudentProfileManager()
